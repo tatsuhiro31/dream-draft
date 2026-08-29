@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^node -e \"const fs=require\\('fs'\\); const vm=require\\('vm'\\); vm\\.createScript\\(fs\\.readFileSync\\('render-engine\\.js','utf8'\\)\\); console\\.log\\('OK'\\);\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

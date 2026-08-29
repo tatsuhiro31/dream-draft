@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロ野球 ドリームドラフト</title>
+    <!-- プレミアムなフォント読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css">
+
+    <!-- PapaParse for CSV parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</head>
+
+<body>
+    <div id="app-container">
+        <header class="app-header">
+            <h1 class="logo">DREAM DRAFT</h1>
+            <div class="header-actions">
+                <button id="undo-btn" class="global-btn btn-warning-outline" style="display: none;">← 戻す</button>
+                <button id="view-roster-btn" class="global-btn" style="display: none;">📊 状況確認</button>
+            </div>
+        </header>
+        <main id="main-content" class="main-content">
+            <!-- Components will be rendered here by JS -->
+        </main>
+        <footer class="app-footer">
+            <p>&copy; 2026 Dream Draft Web Application</p>
+        </footer>
+    </div>
+
+    <!-- Roster Modal -->
+    <div id="roster-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content glass-panel roster-modal-content">
+            <div class="modal-header">
+                <h2>全指名状況</h2>
+                <button id="close-roster-btn" class="btn btn-secondary">閉じる</button>
+            </div>
+            <div id="roster-modal-body" class="roster-modal-body"></div>
+        </div>
+    </div>
+
+    <div id="inactive-confirm-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content glass-panel roster-modal-content" style="max-width: 500px; padding: 1.5rem;">
+            <div class="modal-header">
+                <h2>確認</h2>
+            </div>
+            <div id="inactive-confirm-message" style="padding: 1rem 0; color: var(--text-secondary);"></div>
+            <div style="display:flex; justify-content:flex-end; gap:0.75rem; margin-top:1rem;">
+                <button id="inactive-confirm-no" class="btn btn-secondary">いいえ</button>
+                <button id="inactive-confirm-yes" class="btn btn-primary">はい</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="players_data.js"></script>
+    <script src="state.js"></script>
+    <script src="utils.js"></script>
+    <script src="render-engine.js"></script>
+    <script src="logic-online.js"></script>
+    <script src="sound.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
